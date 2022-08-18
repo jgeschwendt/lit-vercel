@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
- import {LitElement, html, css} from 'lit';
- import {customElement, property} from 'lit/decorators.js';
+import {LitElement, html, css} from 'https://unpkg.com/lit?module';
+import {customElement, property} from 'https://unpkg.com/lit?module/decorators.js?module';
 
  /**
   * An example element.
@@ -16,7 +16,7 @@
   */
  @customElement('my-element')
  export class MyElement extends LitElement {
-   static override styles = css`
+   static styles = css`
      :host {
        display: block;
        border: solid 1px gray;
@@ -37,7 +37,7 @@
    @property({type: Number})
    count = 0;
 
-   override render() {
+  render() {
      return html`
        <h1>${this.sayHello(this.name)}!</h1>
        <button @click=${this._onClick} part="button">
@@ -47,7 +47,7 @@
      `;
    }
 
-   private _onClick() {
+    _onClick() {
      this.count++;
      this.dispatchEvent(new CustomEvent('count-changed'));
    }
@@ -56,13 +56,7 @@
     * Formats a greeting
     * @param name The name to say "Hello" to
     */
-   sayHello(name: string): string {
+   sayHello(name) {
      return `Hello, ${name}`;
-   }
- }
-
- declare global {
-   interface HTMLElementTagNameMap {
-     'my-element': MyElement;
    }
  }
