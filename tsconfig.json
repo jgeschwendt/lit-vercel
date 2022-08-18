@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "outDir": "public",
+    "strict": true
+  }
+}
